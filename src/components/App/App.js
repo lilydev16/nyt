@@ -23,7 +23,7 @@ const App = () => {
   return (
     <div>
       <Header />
-      <ArticleList />
+      <ArticleList articles={articles} />
       
     </div>
   )
