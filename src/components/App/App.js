@@ -4,6 +4,7 @@ import Header from '../Header/Header';
 import ArticleList from '../ArticleList/ArticleList';
 import React from 'react';
 import apiCalls from '../../apiCalls';
+import Footer from '../Footer/Footer';
 
 const App = () => {
   const [articles, setArticles] = useState([]);
@@ -24,7 +25,7 @@ const App = () => {
     <div>
       <Header />
       <ArticleList articles={articles} />
-      
+      <Footer />
     </div>
   )
 }
