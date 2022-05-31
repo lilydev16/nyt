@@ -16,7 +16,7 @@ const App = () => {
     apiCalls.getTopStories()
       .then(data => {
         console.log(data)
-        setArticles(data.results.slice(0, 10))
+        setArticles(data.results.slice(0, 15))
       })
   }, [])
 
