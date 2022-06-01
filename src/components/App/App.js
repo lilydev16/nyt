@@ -15,7 +15,6 @@ const App = () => {
   const [isFilter, setFilter] = useState(false)
 
   const filterArticles = (filterBy) => {
-    console.log(filterBy)
     const filtered = articles.filter(article => {
       return article.section.toLowerCase() === filterBy.toLowerCase() || article.title.toLowerCase().includes(filterBy.toLowerCase())
     })
