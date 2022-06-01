@@ -1,9 +1,9 @@
 import './ArticleDetail.css';
 import { Link } from 'react-router-dom';
 
-const ArticleDetail = ({ selectedArticle }) => {
+const ArticleDetail = ({ articles, id }) => {
+  const selectedArticle = articles.find(article => article.short_url.split('/')[3] === id)
   const { title, abstract, byline, multimedia, section, subsection, short_url, updated_date } = selectedArticle
-  
 
   return(
     <div className='details-viewpage'>

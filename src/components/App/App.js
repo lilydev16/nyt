@@ -13,6 +13,7 @@ const App = () => {
   const [articles, setArticles] = useState([]);
   const [filteredResults, setFilteredResults] = useState([]);
   const [isFilter, setFilter] = useState(false)
+  const [error, setError] = useState('')
 
   const filterArticles = (filterBy) => {
     const filtered = articles.filter(article => {
@@ -28,42 +29,48 @@ const App = () => {
   
   useEffect(() => {
     apiCalls.getTopStories()
-      .then(data => {
-        // console.log(data)
-        setArticles(data.results.slice(0, 15))
+    .then(data => {
+        if (data.status === 'OK') {
+          setArticles(data.results.slice(0, 15))
+        } else {
+          setError('Something went wrong and our team is working on the issue')
+        }
       })
+      .catch(err => setError('Something went wrong and our team is working on the issue'))
   }, [])
 
   return (
-    <div>
-      <Header />
-      
-      <Route exact path='/'>
-        <Form 
-          filterArticles={filterArticles}
-          toggleFilter={toggleFilter} 
-        />
-        <ArticleList 
-          articles={articles} 
-          filteredResults={filteredResults}
-          isFilter={isFilter} 
-        />
-      </Route>
+    error.length ? <p>{error}</p> : (
+      <div>
+        <Header />
+        
+        <Route exact path='/'>
+          <Form 
+            filterArticles={filterArticles}
+            toggleFilter={toggleFilter} 
+          />
+          <ArticleList 
+            articles={articles} 
+            filteredResults={filteredResults}
+            isFilter={isFilter} 
+          />
+        </Route>
 
-      <Route 
-        exact path='/article/:id' 
-        render={({ match }) => {
-          return (
-            <ArticleDetail 
-              id={match.params.id}
-              selectedArticle={articles[parseInt(match.params.id)]}
-            />
-          )
-        }}
-      />
+        <Route 
+          exact path='/article/:id' 
+          render={({ match }) => {
+            return (
+              <ArticleDetail 
+                id={match.params.id}
+                articles={articles}
+              />
+            )
+          }}
+        />
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    )
   )
 }
 

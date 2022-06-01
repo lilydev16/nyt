@@ -10,10 +10,11 @@ const ArticleList = ({ articles, filteredResults, isFilter }) => {
     return (
       <ArticleCard 
         key={index}
-        id={index}
+        id={article.short_url.split('/')[3]}
         title={article.title}
         abstract={article.abstract}
         multimedia={article.multimedia}
+        short_url={article.short_url}
       />
     )
   })

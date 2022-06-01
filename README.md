@@ -1,70 +1,97 @@
-# Getting Started with Create React App
+# NYT Top Stories
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+NYT Top Stories is the place to get your daily news. 
 
-In the project directory, you can run:
+### Endpoints
+This is a React application built using the `/home` endpoint from the [New York Times Top Stories API](https://developer.nytimes.com/docs/top-stories-product/1/overview). These are examples of the API's endpoints:
 
-### `npm start`
+```
+https://api.nytimes.com/svc/topstories/v2/arts.json?api-key=yourkey
+https://api.nytimes.com/svc/topstories/v2/home.json?api-key=yourkey
+https://api.nytimes.com/svc/topstories/v2/science.json?api-key=yourkey
+https://api.nytimes.com/svc/topstories/v2/us.json?api-key=yourkey
+https://api.nytimes.com/svc/topstories/v2/world.json?api-key=yourkey
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Planning
+- Kanban system via [GH Projects](https://github.com/lswatson16/nyt/projects/2)
+- Wireframes
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Learning Goals
+- React fundamentals
+- React Router to build a multipage application
+- REST APIs
+- Asynchronous JavaScript
+- Acceptance testing & End-to-End (E2E) testing via Cypress
 
-### `npm test`
+# Getting Started
+To get a local copy up and running follow these simple steps.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
+1. In your terminal, clone the repo
+   ```sh
+   git clone git@github.com:lswatson16/nyt.git
+   ```
+2. `cd` into the root directory
+    ```sh
+   cd nyt
+   ```
+3. Install NPM packages
+   ```sh
+   npm install
+   ```
+4. Start the server to view the application in the browser
+   ```sh
+   npm start
+   ``` 
+   - Runs the app in the development mode.
+   - Open http://localhost:3000 to view it in the browser.
+   - The page will reload if you make edits.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Features
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Filter Search
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+A user can type into the controlled form to find an article based on the keyword typed in the search input.
 
-### `npm run eject`
+![SearchForm]()
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Article Details
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+After searching for an article, you can select an article to find out more information. After selecting an article, you will be navigated to a details page. Here you can view additional details such as a link to the New York Times article.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![Details_Page]()
+# Future Additions
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Add a favoriting/bookmarking functionality and a bookmarks page
+- Utilize the additional endpoints 
+- Add styling & responsive design
 
-## Learn More
+# Technologies Used 
+- React
+- React Router
+- Cypress
+- Javascript
+- HTML
+- CSS
+- Lighthouse (Chrome Dev Tools)
+- React Dev Tools (Chrome Dev Tools)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Deployment
+<!-- Skip installation by using this deployment link to view the application: [NYT]()
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- No installlation is needed  with the provided deploy link.
+- The application was deployed using [Heroku](https://www.heroku.com/). -->
 
-### Code Splitting
+# Contributors
+- [Lauralyn Watson](https://github.com/lswatson16)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Credits
+<!-- - [Heroku](https://www.heroku.com/) -->
+- [Create React App](https://create-react-app.dev/)
+- [React](https://reactjs.org/)
+- [Cypress.io](https://docs.cypress.io/guides/overview/why-cypress)
+- [React Router v5](https://v5.reactrouter.com/web/guides/quick-start)
