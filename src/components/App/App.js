@@ -37,6 +37,7 @@ const App = () => {
           return (
             <ArticleDetail 
               id={match.params.id}
+              selectedArticle={articles[parseInt(match.params.id)]}
             />
           )
         }}
