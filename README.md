@@ -15,6 +15,10 @@ https://api.nytimes.com/svc/topstories/v2/us.json?api-key=yourkey
 https://api.nytimes.com/svc/topstories/v2/world.json?api-key=yourkey
 ```
 
+### Planning
+- Kanban system via [GH Projects](https://github.com/lswatson16/nyt/projects/2)
+- Wireframes
+
 # Learning Goals
 - React fundamentals
 - React Router to build a multipage application
