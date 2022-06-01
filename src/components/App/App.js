@@ -29,7 +29,7 @@ const App = () => {
   useEffect(() => {
     apiCalls.getTopStories()
       .then(data => {
-        // console.log(data)
+        console.log(data)
         setArticles(data.results.slice(0, 15))
       })
   }, [])
@@ -56,7 +56,7 @@ const App = () => {
           return (
             <ArticleDetail 
               id={match.params.id}
-              selectedArticle={articles[parseInt(match.params.id)]}
+              articles={articles}
             />
           )
         }}
