@@ -11,13 +11,17 @@ const ArticleDetail = ({ selectedArticle }) => {
         <button>Go Back</button>
       </Link>
       <div className='article-details'>
-        <img src={multimedia[1].url} alt={multimedia[1].caption} />
-        <h1>{title}</h1>
-        <p>{abstract}</p>
-        <a className='article-link' href={short_url} target='_blank'>Read More...</a>
-        <p>{byline}</p>
-        <p>{updated_date}</p>
-        <p>{section} {subsection}</p>
+        <div className='details-container'>
+          <h1>{title}</h1>
+          <p>{abstract}</p>
+          <a className='article-link' href={short_url} target='_blank'>Read More...</a>
+          <p>{byline}</p>
+          <p>{updated_date}</p>
+          <p>{section} {subsection}</p>
+        </div>
+        <div className='img-container'>
+          <img src={multimedia[1].url} alt={multimedia[1].caption} />
+        </div>
       </div>
     </div>
   )
