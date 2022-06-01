@@ -14,7 +14,7 @@ const ArticleDetail = ({ selectedArticle }) => {
         <img src={multimedia[1].url} alt={multimedia[1].caption} />
         <h1>{title}</h1>
         <p>{abstract}</p>
-        <a href={short_url} target='_blank'>Read More...</a>
+        <a className='article-link' href={short_url} target='_blank'>Read More...</a>
         <p>{byline}</p>
         <p>{updated_date}</p>
         <p>{section} {subsection}</p>
