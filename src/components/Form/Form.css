@@ -3,6 +3,7 @@ form {
   justify-content: center;
 }
 
-.search-btn {
+.search-btn,
+.clear-btn {
   margin: 0;
 }
