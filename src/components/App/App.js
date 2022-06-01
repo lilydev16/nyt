@@ -11,19 +11,22 @@ import Form from '../Form/Form';
 
 const App = () => {
   const [articles, setArticles] = useState([]);
+  const [filteredResults, setFilteredResults] = useState([]);
+  const [isFilter, setFilter] = useState(false)
 
   const filterArticles = (filterBy) => {
     console.log(filterBy)
     const filtered = articles.filter(article => {
       return article.section.toLowerCase() === filterBy.toLowerCase() || article.title.toLowerCase().includes(filterBy.toLowerCase())
     })
-    setArticles(filtered)
+    setFilteredResults(filtered)
+    setFilter(true)
   }
   
   useEffect(() => {
     apiCalls.getTopStories()
       .then(data => {
-        console.log(data)
+        // console.log(data)
         setArticles(data.results.slice(0, 15))
       })
   }, [])
@@ -34,7 +37,11 @@ const App = () => {
       
       <Route exact path='/'>
         <Form filterArticles={filterArticles} />
-        <ArticleList articles={articles} />
+        <ArticleList 
+          articles={articles} 
+          filteredResults={filteredResults}
+          isFilter={isFilter} 
+        />
       </Route>
 
       <Route 
