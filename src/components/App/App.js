@@ -1,5 +1,6 @@
 import './App.css';
 import { useState, useEffect } from 'react';
+import { Route } from 'react-router-dom/cjs/react-router-dom.min';
 import Header from '../Header/Header';
 import ArticleList from '../ArticleList/ArticleList';
 import React from 'react';
@@ -24,7 +25,11 @@ const App = () => {
   return (
     <div>
       <Header />
-      <ArticleList articles={articles} />
+      
+      <Route exact path='/'>
+        <ArticleList articles={articles} />
+      </Route>
+
       <Footer />
     </div>
   )
