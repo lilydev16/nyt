@@ -1,0 +1,18 @@
+button {
+  margin: 2em 4em;
+  padding: 0.8em;
+}
+
+.article-details {
+ display: flex;
+ align-content: center;
+ margin: 3em 4em;
+}
+
+.details-container {
+  margin-right: 1em;
+}
+
+.article-link {
+  text-decoration: underline;
+}
