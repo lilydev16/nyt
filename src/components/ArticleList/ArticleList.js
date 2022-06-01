@@ -10,6 +10,7 @@ const ArticleList = ({ articles }) => {
         id={index}
         title={article.title}
         abstract={article.abstract}
+        multimedia={article.multimedia}
       />
     )
   })
