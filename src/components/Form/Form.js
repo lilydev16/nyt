@@ -20,12 +20,10 @@ const Form = ({ filterArticles, toggleFilter }) => {
 
   return (
     <form onSubmit={(e) => handleSubmit(e)}>
-      {/* <label htmlFor='search'>Search</label> */}
       <input
         value={search}
         type='text'
         placeholder='America'
-        // id='search'
         name='search'
         className='search-bar'
         onChange={(e) => updateSearch(e)}
