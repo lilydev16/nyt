@@ -1,24 +1,35 @@
 import './App.css';
+import React from 'react';
 import { useState, useEffect } from 'react';
 import { Route } from 'react-router-dom/cjs/react-router-dom.min';
 import Header from '../Header/Header';
 import ArticleList from '../ArticleList/ArticleList';
-import React from 'react';
 import apiCalls from '../../apiCalls';
 import Footer from '../Footer/Footer';
 import ArticleDetail from '../ArticleDetail/ArticleDetail';
+import Form from '../Form/Form';
 
 const App = () => {
   const [articles, setArticles] = useState([]);
+  const [filteredResults, setFilteredResults] = useState([]);
+  const [isFilter, setFilter] = useState(false)
 
-  // const getArticles = () => {
-  //   apiCalls.getTopStories()
-  // }
+  const filterArticles = (filterBy) => {
+    const filtered = articles.filter(article => {
+      return article.section.toLowerCase() === filterBy.toLowerCase() || article.title.toLowerCase().includes(filterBy.toLowerCase())
+    })
+    setFilteredResults(filtered)
+    setFilter(true)
+  }
+
+  const toggleFilter = () => {
+    isFilter ? setFilter(false) : setFilter(true)
+  }
   
   useEffect(() => {
     apiCalls.getTopStories()
       .then(data => {
-        console.log(data)
+        // console.log(data)
         setArticles(data.results.slice(0, 15))
       })
   }, [])
@@ -28,7 +39,15 @@ const App = () => {
       <Header />
       
       <Route exact path='/'>
-        <ArticleList articles={articles} />
+        <Form 
+          filterArticles={filterArticles}
+          toggleFilter={toggleFilter} 
+        />
+        <ArticleList 
+          articles={articles} 
+          filteredResults={filteredResults}
+          isFilter={isFilter} 
+        />
       </Route>
 
       <Route 
