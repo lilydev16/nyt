@@ -22,6 +22,10 @@ const App = () => {
     setFilteredResults(filtered)
     setFilter(true)
   }
+
+  const toggleFilter = () => {
+    isFilter ? setFilter(false) : setFilter(true)
+  }
   
   useEffect(() => {
     apiCalls.getTopStories()
@@ -36,7 +40,10 @@ const App = () => {
       <Header />
       
       <Route exact path='/'>
-        <Form filterArticles={filterArticles} />
+        <Form 
+          filterArticles={filterArticles}
+          toggleFilter={toggleFilter} 
+        />
         <ArticleList 
           articles={articles} 
           filteredResults={filteredResults}

@@ -1,7 +1,7 @@
 import './Form.css';
 import { useState } from 'react';
 
-const Form = ({ filterArticles }) => {
+const Form = ({ filterArticles, toggleFilter }) => {
   const [search, setSearch] = useState('')
 
   const updateSearch = (e) => {
@@ -11,6 +11,11 @@ const Form = ({ filterArticles }) => {
   const handleSubmit = (e) => {
     e.preventDefault()
     filterArticles(search)
+  }
+
+  const clearResults = () => {
+    setSearch('')
+    toggleFilter()
   }
 
   return (
@@ -30,7 +35,15 @@ const Form = ({ filterArticles }) => {
         type='submit'
         className='search-btn'
         disabled={search.length ? false : true}
-      >Search
+      >
+        Search
+      </button>
+      <button
+        type='button'
+        className='clear-btn'
+        onClick={() => clearResults()}
+      >
+        Clear
       </button>
     </form>
   )
