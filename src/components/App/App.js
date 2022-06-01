@@ -1,19 +1,24 @@
 import './App.css';
+import React from 'react';
 import { useState, useEffect } from 'react';
 import { Route } from 'react-router-dom/cjs/react-router-dom.min';
 import Header from '../Header/Header';
 import ArticleList from '../ArticleList/ArticleList';
-import React from 'react';
 import apiCalls from '../../apiCalls';
 import Footer from '../Footer/Footer';
 import ArticleDetail from '../ArticleDetail/ArticleDetail';
+import Form from '../Form/Form';
 
 const App = () => {
   const [articles, setArticles] = useState([]);
 
-  // const getArticles = () => {
-  //   apiCalls.getTopStories()
-  // }
+  const filterArticles = (filterBy) => {
+    console.log(filterBy)
+    const filtered = articles.filter(article => {
+      return article.section.toLowerCase() === filterBy.toLowerCase() || article.title.toLowerCase().includes(filterBy.toLowerCase())
+    })
+    setArticles(filtered)
+  }
   
   useEffect(() => {
     apiCalls.getTopStories()
@@ -28,6 +33,7 @@ const App = () => {
       <Header />
       
       <Route exact path='/'>
+        <Form filterArticles={filterArticles} />
         <ArticleList articles={articles} />
       </Route>
 
