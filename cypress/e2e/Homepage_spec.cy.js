@@ -3,15 +3,15 @@ describe('Homepage_spec.cy.js', () => {
 
   beforeEach(() => {
     const url = 'http://localhost:3000'
-    cy.intercept('GET', `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=Cypress.env('api_key')`, 
-      { fixtures: 'allArticles.json' }).as('getArticles')
-    cy.intercept('GET', `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=Cypress.env('api_key')`,
-      { fixtures: 'selectedArticle.json' }).as('getSelectedArticle')
-    cy.intercept('GET', `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=Cypress.env('api_key')`,
-      { fixtures: 'noResults.json' }).as('getNoResults')
-    cy.intercept('GET', `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=Cypress.env('api_key')`,
-      { fixtures: 'filteredArticles.json' }).as('getFilteredArticles')
     cy.visit(url)
+    cy.intercept('GET', `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=Cypress.env('api_key')`, 
+      { fixture: 'allArticles.json' }).as('getArticles')
+    cy.intercept('GET', `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=Cypress.env('api_key')`,
+      { fixture: 'selectedArticle.json' }).as('getSelectedArticle')
+    cy.intercept('GET', `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=Cypress.env('api_key')`,
+      { fixture: 'noResults.json' }).as('getNoResults')
+    cy.intercept('GET', `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=Cypress.env('api_key')`,
+      { fixture: 'filteredArticles.json' }).as('getFilteredArticles')
   })
 
   it('should visit the homepage', () => {
@@ -31,10 +31,12 @@ describe('Homepage_spec.cy.js', () => {
       
     cy.get('button.search-btn')
       .should('be.visible').should('contain', 'Search').and('be.disabled')
+  })
 
+  it('should display a list of articles on page load that each have an image, title, and abstract', () => {
     cy.get('.article-list')
       .should('not.be.empty')
-    
+
     cy.get('a')
       .should('have.length', 15)
       .children().should('have.class', 'article-card')
@@ -43,6 +45,53 @@ describe('Homepage_spec.cy.js', () => {
         cy.get('h2').should('be.visible').should('not.be.empty')
         cy.get('p').should('be.visible').should('not.be.empty')
       })  
+  })
+
+  it('should allow users to type in the form and filter through the list of articles', () => {
+    cy.get('form > .search-bar')
+      .type('Acquitted').should('have.value', 'Acquitted')
+
+    cy.get('button.search-btn')
+      .should('not.be.disabled')
+      .click()
+
+    // cy.wait('@getFilteredArticles')
+
+    // cy.get('article-list')
+    //   .should('have.length', 1)
+
+    // cy.get('article-card')
+    //   .should('be.visible')
+    //   .within(card => {
+    //     cy.get('img')
+    //       .should('be.visible')
+    //       .should('have.attr', 'alt').should('contain', '')
+    //       .should('have.attr', 'src').should('contain', '')
+        
+    //     cy.get('h2')
+    //       .should('be.visible')
+    //       .should('contain', '')
+
+    //     cy.get('p')
+    //       .should('be.visible')
+    //       .should('contain', '')
+    //   }) 
+  })
+
+  it.only('should allow users to start the search over and view the original list of articles', () => {
+    cy.get('form > .search-bar')
+      .type('Acquitted').should('have.value', 'Acquitted')
+
+    cy.get('button.search-btn')
+      .should('not.be.disabled')
+      .click()
+
+    cy.get('button.clear-btn')
+      .should('not.be.disabled').and('contain', 'Clear')
+      .click()
+
+    cy.get('article-list')
+      .should('not.be.empty')
   })
 
 })
