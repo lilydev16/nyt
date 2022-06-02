@@ -1,10 +1,10 @@
-import './ArticleList.css'
-import ArticleCard from '../ArticleCard/ArticleCard'
+import './ArticleList.css';
+import ArticleCard from '../ArticleCard/ArticleCard';
 
 const ArticleList = ({ articles, filteredResults, isFilter }) => { 
   let arr
   !isFilter ? arr = articles : arr = filteredResults
-
+  
   const articleCards = arr.map((article, index) => {
     return (
       <ArticleCard 
