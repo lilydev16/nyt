@@ -4,3 +4,8 @@
   grid-gap: 3.2em;
   margin: 2em;
 }
+
+.no-results-msg {
+  text-align: center;
+  margin: 4em;
+}
