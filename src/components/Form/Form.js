@@ -1,7 +1,7 @@
 import './Form.css';
 import { useState } from 'react';
 
-const Form = ({ filterArticles, toggleFilter }) => {
+const Form = ({ filterArticles, toggleFilter, isFilter }) => {
   const [search, setSearch] = useState('')
 
   const updateSearch = (e) => {
@@ -29,20 +29,26 @@ const Form = ({ filterArticles, toggleFilter }) => {
         onChange={(e) => updateSearch(e)}
       >
       </input>
-      <button
-        type='submit'
-        className='search-btn'
-        disabled={search.length ? false : true}
-      >
-        Search
-      </button>
-      <button
-        type='button'
-        className='clear-btn'
-        onClick={() => clearResults()}
-      >
-        Clear
-      </button>
+
+      {!isFilter && (
+        <button
+          type='submit'
+          className='search-btn'
+          disabled={search.length ? false : true}
+        >
+          Search
+        </button>
+      )}
+
+      {isFilter && (
+        <button
+          type='button'
+          className='clear-btn'
+          onClick={() => clearResults()}
+        >
+          Clear  
+        </button>
+      )}
     </form>
   )
 }

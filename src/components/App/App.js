@@ -47,7 +47,8 @@ const App = () => {
         <Route exact path='/'>
           <Form 
             filterArticles={filterArticles}
-            toggleFilter={toggleFilter} 
+            toggleFilter={toggleFilter}
+            isFilter={isFilter}
           />
           <ArticleList 
             articles={articles} 
