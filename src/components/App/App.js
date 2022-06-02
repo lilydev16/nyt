@@ -40,7 +40,7 @@ const App = () => {
   }, [])
 
   return (
-    error.length ? <p>{error}</p> : (
+    error.length ? <p className='error'>{error}</p> : (
       <div>
         <Header />
         
