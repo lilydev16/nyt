@@ -1,11 +1,10 @@
-import './ArticleList.css'
-import ArticleCard from '../ArticleCard/ArticleCard'
+import './ArticleList.css';
+import ArticleCard from '../ArticleCard/ArticleCard';
 
-
-const ArticleList = ({ articles, filteredResults, isFilter }) => {
+const ArticleList = ({ articles, filteredResults, isFilter }) => { 
   let arr
   !isFilter ? arr = articles : arr = filteredResults
-
+  
   const articleCards = arr.map((article, index) => {
     return (
       <ArticleCard 
@@ -19,9 +18,11 @@ const ArticleList = ({ articles, filteredResults, isFilter }) => {
     )
   })
   return (
-    <div className='article-list'>
-      {articleCards}
-    </div>
+    !articleCards.length ? <p className='no-results-msg'>No results were found based on your search. Clear and try a new search.</p> : (
+      <div className='article-list'>
+        {articleCards}
+      </div>
+    )
   )
 }
 
