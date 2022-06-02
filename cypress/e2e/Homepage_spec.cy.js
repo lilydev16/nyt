@@ -1,8 +1,8 @@
 describe('Homepage_spec.cy.js', () => {
+  const url = 'http://localhost:3000'
   // const apiKey = Cypress.env('api_key')
 
   beforeEach(() => {
-    const url = 'http://localhost:3000'
     cy.visit(url)
     cy.intercept('GET', `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=Cypress.env('api_key')`, 
       { fixture: 'allArticles.json' }).as('getArticles')
@@ -78,7 +78,7 @@ describe('Homepage_spec.cy.js', () => {
     //   }) 
   })
 
-  it.only('should allow users to start the search over and view the original list of articles', () => {
+  it('should allow users to start the search over and view the original list of articles', () => {
     cy.get('form > .search-bar')
       .type('Acquitted').should('have.value', 'Acquitted')
 
@@ -93,6 +93,35 @@ describe('Homepage_spec.cy.js', () => {
     cy.get('article-list')
       .should('not.be.empty')
   })
+  it('should be able to click on an article card to view more details on a details viewpage and return to homepage', () => {
+    cy.get('a')
+      .first()
+      .click()
 
+    cy.url(url + `/article/3me6taZ`)
+
+    cy.get('button')
+      .contains('Go Back')
+      .click()
+
+    cy.url(url)
+  })
+
+  it('should show a message if no results were found based on the filter search', () => {
+    cy.get('form > .search-bar')
+      .type('NASA').should('have.value', 'NASA')
+
+    cy.get('button.search-btn')
+      .should('not.be.disabled')
+      .click()
+
+    cy.get('.no-results-msg')
+      .contains('No results were found based on your search. Clear and try a new search.')
+  })
+
+  // it('should display an error message to the user when there is a network request error', () => {
+  //   cy.get('.error')
+  //     .contains('Something went wrong and our team is working on the issue')
+  // })
 })
 
