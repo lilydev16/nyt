@@ -57,13 +57,13 @@ To get a local copy up and running follow these simple steps.
 
 A user can type into the controlled form to find an article based on the keyword typed in the search input.
 
-![SearchForm]()
+![SearchForm](https://media.giphy.com/media/1yvl9jL9uDEog9N9sA/giphy.gif)
 
 ## Article Details
 
 After searching for an article, you can select an article to find out more information. After selecting an article, you will be navigated to a details page. Here you can view additional details such as a link to the New York Times article.
 
-![Details_Page]()
+![Details_Page](https://media.giphy.com/media/oiEDfhNsccTEsz0dl5/giphy.gif)
 # Future Additions
 
 - Add a favoriting/bookmarking functionality and a bookmarks page
@@ -77,8 +77,12 @@ After searching for an article, you can select an article to find out more infor
 - Javascript
 - HTML
 - CSS
-- Lighthouse (Chrome Dev Tools)
 - React Dev Tools (Chrome Dev Tools)
+
+## Accessibility
+Lighthouse (Chrome Dev Tools)
+
+![Screen Shot 2022-06-02 at 2 58 47 PM](https://user-images.githubusercontent.com/93230374/171768104-30201898-8261-4824-9478-d3444ad744b0.png)
 
 # Deployment
 <!-- Skip installation by using this deployment link to view the application: [NYT]()
