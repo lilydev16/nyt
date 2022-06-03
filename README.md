@@ -32,6 +32,11 @@ An API key is required to utilize the API. Here's the [instructions](https://dev
 ### Project Management Tools
 - Kanban system via [GH Projects](https://github.com/lswatson16/nyt/projects/2)
 - Wireframes
+![Wireframes](https://user-images.githubusercontent.com/93230374/171775031-b07d0314-db69-4beb-b3bb-34daceb47a13.png)
+
+- Component Architecture
+![Component](https://user-images.githubusercontent.com/93230374/171773442-ba804291-cb60-4c51-9809-7b3dbdff705f.png)
+
 
 # Learning Goals
 - React fundamentals
