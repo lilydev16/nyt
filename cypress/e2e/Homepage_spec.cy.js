@@ -107,18 +107,6 @@ describe('Homepage_spec.cy.js', () => {
     cy.url(url)
   })
 
-  it('should show a message if no results were found based on the filter search', () => {
-    cy.get('form > .search-bar')
-      .type('NASA').should('have.value', 'NASA')
-
-    cy.get('button.search-btn')
-      .should('not.be.disabled')
-      .click()
-
-    cy.get('.no-results-msg')
-      .contains('No results were found based on your search. Clear and try a new search.')
-  })
-
   // it('should display an error message to the user when there is a network request error', () => {
   //   cy.get('.error')
   //     .contains('Something went wrong and our team is working on the issue')
