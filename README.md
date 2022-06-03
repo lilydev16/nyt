@@ -5,7 +5,13 @@
 NYT Top Stories is the place to get your daily news. 
 
 ### Endpoints
-This is a React application built using the `/home` endpoint from the [New York Times Top Stories API](https://developer.nytimes.com/docs/top-stories-product/1/overview). These are examples of the API's endpoints:
+This is a React application built using the [New York Times Top Stories API](https://developer.nytimes.com/docs/top-stories-product/1/overview). The Top Stories API returns an array of articles currently on the specified section.
+
+Endpoints include these section values: arts, automobiles, books, business, fashion, food, health, home, insider, magazine, movies, nyregion, obituaries, opinion, politics, realestate, science, sports, sundayreview, technology, theater, t-magazine, travel, upshot, us, and world.
+
+![Enpoint](https://user-images.githubusercontent.com/93230374/171770276-3e28a581-9341-4066-9229-feb13044b1f3.png)
+
+These are examples of the API's endpoints:
 
 ```
 https://api.nytimes.com/svc/topstories/v2/arts.json?api-key=yourkey
@@ -15,7 +21,15 @@ https://api.nytimes.com/svc/topstories/v2/us.json?api-key=yourkey
 https://api.nytimes.com/svc/topstories/v2/world.json?api-key=yourkey
 ```
 
-### Planning
+### Home Endpoint
+The `/home.json` endpoint gets the articles currently on the homepage for the New York Times website. 
+
+### API Key
+An API key is required to utilize the API. Here's the [instructions](https://developer.nytimes.com/get-started) to get started using the API. Once you create a developer account on New York Times, you'll have to register your application to access the API key.
+- Tip: Store your API key in a `.env` or `.env.local` file as environment variables in the root of your project. Make sure the `.env` or `.env.local` is added to the `.gitignore` file so you dont accidentally push up your API key. [Read more](https://create-react-app.dev/docs/adding-custom-environment-variables/#adding-development-environment-variables-in-env)
+- Tip: For Cypress testing, you will also need to store the API key as an environment variable. Inside your `cypress` folder, create a file called `cypress.env.json` to store the environment variable. Add `cypress.env.json` to your `.gitignore`. [Read more](https://docs.cypress.io/guides/guides/environment-variables#Option-2-cypress-env-json)
+
+### Project Management Tools
 - Kanban system via [GH Projects](https://github.com/lswatson16/nyt/projects/2)
 - Wireframes
 
