@@ -51,6 +51,27 @@ To get a local copy up and running follow these simple steps.
    - Open http://localhost:3000 to view it in the browser.
    - The page will reload if you make edits.
 
+## Testing Installation
+
+1. Install Cypress
+   ```sh
+   npm i -D cypress npm install cypress --save-dev
+   ```
+   or
+   ```sh
+   npm install cypress --save-dev
+   ```
+
+2. Add this command to your `scripts` in `package.json`
+   ```sh
+   "cypress": "cypress open"
+   ```
+
+3. Run cypress tests
+   ```sh
+   npm run cypress
+   ```
+
 # Features
 
 ## Filter Search
