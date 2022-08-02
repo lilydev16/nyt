@@ -4,6 +4,8 @@
 
 NYT Top Stories is the place to get your daily news. 
 
+View application [here](https://nyt-psi.vercel.app/)
+
 ### Endpoints
 This is a React application built using the [New York Times Top Stories API](https://developer.nytimes.com/docs/top-stories-product/1/overview). The Top Stories API returns an array of articles currently on the specified section.
 
@@ -125,10 +127,10 @@ Lighthouse (Chrome Dev Tools)
 ![Screen Shot 2022-06-02 at 2 58 47 PM](https://user-images.githubusercontent.com/93230374/171768104-30201898-8261-4824-9478-d3444ad744b0.png)
 
 # Deployment
-<!-- Skip installation by using this deployment link to view the application: [NYT]()
+Skip installation by using this deployment link to view the application: [NYT](https://nyt-psi.vercel.app/)
 
 - No installlation is needed  with the provided deploy link.
-- The application was deployed using [Heroku](https://www.heroku.com/). -->
+- The application was deployed using [Vercel](https://www.vercel.com/).
 
 # Contributors
 - [Lauralyn Watson](https://github.com/lswatson16)
