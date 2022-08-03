@@ -3,6 +3,7 @@
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 3.2em;
   margin: 2em;
+  flex-grow: 1;
 }
 
 .no-results-msg {
