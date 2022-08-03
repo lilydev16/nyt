@@ -3,7 +3,8 @@ import './Header.css';
 const Header = () => {
   return (
     <header>
-      <h1>Top Stories</h1>
+      <h1>The New York Times</h1>
+      <p>Top stories for today</p>
     </header>
   )
 
