@@ -41,7 +41,7 @@ const App = () => {
 
   return (
     error.length ? <p className='error'>{error}</p> : (
-      <div>
+      <div className='app-container'>
         <Header />
         
         <Route exact path='/'>
