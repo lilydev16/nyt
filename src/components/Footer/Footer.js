@@ -4,9 +4,8 @@ const Footer = () => {
   return(
     <div className='footer-container'>
       <footer>
-        <h3>
-          <span>&copy;</span> 
-          2022 The New York Times Company.
+        <h3> 
+          &copy; 2022 The New York Times Company
         </h3>
 
         <div className='personal-container'>
