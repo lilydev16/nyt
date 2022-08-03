@@ -2,7 +2,7 @@ import './Header.css';
 
 const Header = ({ today }) => {
   const month = today.split(' ').slice(1, 2)
-  const numDate = today.split(' ').slice(2).join(', ')
+  let numDate = today.split(' ').slice(2).join(', ')
   const formatMonths = {
     'Jan': 'January',
     'Feb': 'February',
@@ -16,6 +16,10 @@ const Header = ({ today }) => {
     'Oct': 'October',
     'Nov': 'November',
     'Dec': 'December'
+  }
+
+  if (numDate.charAt(0) === '0') {
+    numDate = numDate.slice(1)
   }
 
   return (
