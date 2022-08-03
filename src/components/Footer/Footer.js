@@ -12,10 +12,10 @@ const Footer = () => {
           <h3 className='personal-info'>
             Web Development by Lauralyn Watson
             <div className='personal-links'>
-              <a href='https://github.com/lswatson16/nyt'> 
+              <a href='https://github.com/lswatson16/nyt' className='social-link'> 
                 <span>GitHub</span>
               </a>
-              <a href='https://www.linkedin.com/in/lauralyn-watson/'> 
+              <a href='https://www.linkedin.com/in/lauralyn-watson/' className='social-link'> 
                 <span>LinkedIn</span>
               </a>
             </div> 
