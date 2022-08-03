@@ -3,6 +3,10 @@ button {
   padding: 0.8em;
 }
 
+.details-viewpage {
+  flex-grow: 1;
+}
+
 .article-details {
  display: flex;
  align-content: center;
