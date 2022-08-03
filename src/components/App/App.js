@@ -14,6 +14,7 @@ const App = () => {
   const [filteredResults, setFilteredResults] = useState([]);
   const [isFilter, setFilter] = useState(false)
   const [error, setError] = useState('')
+  const [today, setToday] = useState('');
 
   const filterArticles = (filterBy) => {
     const filtered = articles.filter(article => {
@@ -32,6 +33,7 @@ const App = () => {
     .then(data => {
         if (data.status === 'OK') {
           setArticles(data.results.slice(0, 15))
+          setToday(new Date().toDateString())
         } else {
           setError('Something went wrong and our team is working on the issue')
         }
@@ -42,7 +44,7 @@ const App = () => {
   return (
     error.length ? <p className='error'>{error}</p> : (
       <div className='app-container'>
-        <Header />
+        <Header today={today} />
         
         <Route exact path='/'>
           <Form 
