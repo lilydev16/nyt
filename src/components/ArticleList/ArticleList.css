@@ -11,6 +11,12 @@
   margin: 4em;
 }
 
+@media (min-width: 1900px) {
+  .article-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 @media (max-width: 1220px) {
   .article-list {
     grid-template-columns: repeat(2, 1fr);
