@@ -32,7 +32,7 @@ const App = () => {
     apiCalls.getTopStories()
     .then(data => {
         if (data.status === 'OK') {
-          setArticles(data.results.slice(0, 15))
+          setArticles(data.results)
           setToday(new Date().toDateString())
         } else {
           setError('Something went wrong and our team is working on the issue')
