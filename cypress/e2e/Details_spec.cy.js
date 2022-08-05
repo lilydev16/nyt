@@ -13,10 +13,10 @@ describe('Homepage_spec.cy.js', () => {
 
   it.skip('should display a header, Back button and footer', () => {
     cy.get('header > h1')
-      .should('be.visible').and('contain', 'Top Stories')
+      .should('be.visible').and('contain', 'The New York Times')
 
     cy.get('footer > h3')
-      .should('be.visible').and('contain', 'Copyright (c) 2022 The New York Times Company. All Rights Reserved.')
+      .should('be.visible').and('contain', 'Copyright (c) 2022 The New York Times Company')
 
     cy.get('button')
       .should('be.visible').should('contain', 'Go Back').and('not.be.disabled')
