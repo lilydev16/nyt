@@ -7,9 +7,12 @@ const ArticleDetail = ({ articles, id }) => {
 
   return(
     <div className='details-viewpage'>
-      <Link to='/'>
-        <button>Go Back</button>
-      </Link>
+      <div className='back-btn-container'>
+        <Link to='/'>
+          <button className='back-btn'>Go Back</button>
+        </Link>
+
+      </div>
       <div className='article-details'>
         <div className='details-container'>
           <h1>{title}</h1>
