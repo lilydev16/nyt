@@ -146,7 +146,7 @@ Lighthouse (Chrome Dev Tools)
 
 # Contributors
 
-- [Lauralyn Watson](https://github.com/lswatson16)
+- [Lauralyn Watson](https://github.com/lilydev16)
 
 # Credits
 
