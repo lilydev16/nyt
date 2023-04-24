@@ -89,7 +89,7 @@ To get a local copy up and running follow these simple steps.
 1. Install Cypress
 
    ```sh
-   npm i -D cypress npm install cypress --save-dev
+   npm i -D cypress
    ```
 
    or
